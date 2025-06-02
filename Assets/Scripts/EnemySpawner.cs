@@ -12,8 +12,9 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-
+        InstanceEnemy();
     }
+
     public void InstanceEnemy()
     {
         switch (EnemyType)
@@ -29,6 +30,7 @@ public class EnemySpawner : MonoBehaviour
                 Enemy = new RandomEnemy(10f, _rb2D, sprite);
                 break;
         }
+        GetComponent<SpriteRenderer>().sprite = Enemy.GetSprite(); 
     }
 
 
