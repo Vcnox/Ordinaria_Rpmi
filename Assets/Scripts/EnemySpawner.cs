@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
     
 
 
-    //Faltaria el puente :(
+    //Faltaria el puente debido que esta todo lo demas  :(
     void Start()
     {
         timeToSpawn = 0;

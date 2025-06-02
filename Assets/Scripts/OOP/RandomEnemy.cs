@@ -42,7 +42,7 @@ public class RandomEnemy : Enemy
         }
     }
 
-    // No supe como hacer que rote pero he hecho que vaya de derecha a izquierda
+    // No supe como hacer que rote pero he hecho que vaya de derecha a izquierda, es decir que solo falta la rotacion.
     public virtual void Hit()
     {
 
