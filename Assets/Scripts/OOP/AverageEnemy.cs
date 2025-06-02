@@ -9,10 +9,17 @@ public class AverageEnemy : Enemy
     public AverageEnemy(float speed, Rigidbody2D rb2D, Sprite sprite) : base(speed, rb2D, sprite)
     {
         speed = 15f;
+        Rigidbody2D rigidbody2D = rb2D;
+
+
     }
 
     public override void Move()
     {
         _rb2D.transform.position = Vector2.MoveTowards(_rb2D.transform.position, player.position, speed * Time.deltaTime); 
+    }
+    public virtual void Hit()
+    {
+
     }
 }

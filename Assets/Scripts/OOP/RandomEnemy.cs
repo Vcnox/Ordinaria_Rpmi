@@ -41,4 +41,8 @@ public class RandomEnemy : Enemy
             direction = -1;
         }
     }
+    public virtual void Hit()
+    {
+
+    }
 }
