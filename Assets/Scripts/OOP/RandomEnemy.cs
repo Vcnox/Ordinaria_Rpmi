@@ -41,6 +41,8 @@ public class RandomEnemy : Enemy
             direction = -1;
         }
     }
+
+    // No supe como hacer que rote pero he hecho que vaya de derecha a izquierda
     public virtual void Hit()
     {
 

@@ -9,11 +9,30 @@ public class EnemySpawner : MonoBehaviour
     private Enemy Enemy;
     public Rigidbody2D _rb2D;
     private Sprite sprite;
+    public float minTimeToSpawn, maxTimeToSpawn;    
+    private float timeToSpawn, spawnTime;
+   
 
+
+    // He intentado hacer un spawn pero 
     void Start()
     {
+        timeToSpawn = 0;
+        spawnTime = Random.Range(minTimeToSpawn, maxTimeToSpawn);
         InstanceEnemy();
     }
+    void Update()
+    {
+        timeToSpawn += Time.deltaTime;
+        if (timeToSpawn >= minTimeToSpawn )
+        {
+            Instantiate(RandomEnemy,new Vector2(Random.Range(-5,5)), transform.position.y, Quaternion.identity);
+        }
+        timeToSpawn = 0;
+        spawnTime = Random.Range(-minTimeToSpawn, maxTimeToSpawn);
+    }
+
+   
 
     public void InstanceEnemy()
     {
@@ -30,7 +49,7 @@ public class EnemySpawner : MonoBehaviour
                 Enemy = new RandomEnemy(10f, _rb2D, sprite);
                 break;
         }
-        GetComponent<SpriteRenderer>().sprite = Enemy.GetSprite(); 
+        
     }
 
 

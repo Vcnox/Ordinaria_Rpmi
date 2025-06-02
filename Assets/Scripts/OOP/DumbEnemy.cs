@@ -6,7 +6,7 @@ using UnityEngine;
 public class DumbEnemy : Enemy
 {
     private Vector2 _Dir;
-
+   
     
     public DumbEnemy(float speed, Rigidbody2D rb2D, Sprite sprite) : base(speed, rb2D, sprite)
     {
@@ -25,5 +25,12 @@ public class DumbEnemy : Enemy
       _Dir = new Vector2 (Random.Range(-5,5),_rb2D.transform.position.y);
     }
 
+    public virtual void Hit()
+    {
+
+        
+       
+    }
+    
     
 }
