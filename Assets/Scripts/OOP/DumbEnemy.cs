@@ -28,7 +28,7 @@ public class DumbEnemy : Enemy
     public virtual void Hit()
     {
 
-        
+        _rb2D.IsDestroyed(); 
        
     }
     

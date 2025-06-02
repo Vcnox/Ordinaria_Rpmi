@@ -751,6 +751,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e7f731a69ac974a9fb63aae93b85f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyType: 0
+  RandomEnemy: {fileID: 855596925}
+  _rb2D: {fileID: 0}
+  minTimeToSpawn: 0
+  maxTimeToSpawn: 0
 --- !u!4 &855596927
 Transform:
   m_ObjectHideFlags: 0
