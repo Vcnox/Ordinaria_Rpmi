@@ -22,7 +22,7 @@ public class RandomEnemy : Enemy
     {
       Speed = speed;
      _timeToSpin = 0;
-     _currentTime = 0;   
+     _currentTime = 1;   
       
 
     }
