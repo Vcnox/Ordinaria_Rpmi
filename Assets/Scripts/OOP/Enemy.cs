@@ -6,6 +6,8 @@ public enum EnemyType { AVERAGE_ENEMY, RANDOM_ENEMY, DUMB_ENEMY };
 
 public abstract class Enemy
 {
+    // Script completo 
+
     protected float speed;
     protected Rigidbody2D _rb2D;
     private Sprite _sprite;
