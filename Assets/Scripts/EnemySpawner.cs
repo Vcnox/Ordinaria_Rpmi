@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
     
 
 
-    // He intentado hacer un spawn pero no entiendo porque me da error el Vector2
+    //Faltaria el puente :(
     void Start()
     {
         timeToSpawn = 0;
@@ -24,9 +24,9 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         timeToSpawn += Time.deltaTime;
-        if (timeToSpawn >= minTimeToSpawn )
+        if (timeToSpawn >= spawnTime )
         {
-            Instantiate(RandomEnemy, new Vector2(Random.Range(-5, 5), transform.position.y, Quaternion.identity));
+            Instantiate(RandomEnemy, new Vector2(Random.Range(-5, 5), transform.position.y), Quaternion.identity);
         }
         timeToSpawn = 0;
         spawnTime = Random.Range(-minTimeToSpawn, maxTimeToSpawn);
