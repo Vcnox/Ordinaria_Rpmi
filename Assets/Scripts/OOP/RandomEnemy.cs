@@ -18,7 +18,7 @@ public class RandomEnemy : Enemy
 
 
 
-    public RandomEnemy(float speed, Rigidbody2D rb2D, Sprite sprite) : base(speed, rb2D, sprite)
+    public RandomEnemy(float speed, Rigidbody2D rb2D) : base(speed, rb2D, Resources.Load<Sprite>("RandomEnemy"))
     {
       Speed = speed;
      _timeToSpin = 0;

@@ -19,37 +19,40 @@ public class EnemySpawner : MonoBehaviour
     {
         timeToSpawn = 0;
         spawnTime = Random.Range(minTimeToSpawn, maxTimeToSpawn);
-        InstanceEnemy();
     }
     void Update()
     {
         timeToSpawn += Time.deltaTime;
         if (timeToSpawn >= spawnTime )
         {
-            Instantiate(RandomEnemy, new Vector2(Random.Range(-5, 5), transform.position.y), Quaternion.identity);
+            GameObject o = Instantiate(RandomEnemy, new Vector2(Random.Range(-5, 5), transform.position.y), Quaternion.identity);
+            InstanceEnemy(o);
+            o.GetComponent<SpriteRenderer>().sprite = Enemy.GetSprite();
+            o.GetComponent<EnemyBehaviour>().enemy = Enemy;
+            timeToSpawn = 0;
+            spawnTime = Random.Range(minTimeToSpawn, maxTimeToSpawn);
         }
-        timeToSpawn = 0;
-        spawnTime = Random.Range(-minTimeToSpawn, maxTimeToSpawn);
     }
 
    
     // Objetos creados 
-    public void InstanceEnemy()
+    public void InstanceEnemy(GameObject o)
     {
+        EnemyType = (EnemyType)Random.Range((int)EnemyType.AVERAGE_ENEMY, (int)EnemyType.DUMB_ENEMY + 1);
         switch (EnemyType)
         {
             case EnemyType.AVERAGE_ENEMY:
-                Enemy = new AverageEnemy(15f, _rb2D, sprite);
+                Enemy = new AverageEnemy(15f, o.GetComponent<Rigidbody2D>());
                 break;
 
             case EnemyType.DUMB_ENEMY:
-                Enemy = new DumbEnemy(30f, _rb2D, sprite);
+                Enemy = new DumbEnemy(30f, o.GetComponent<Rigidbody2D>());
                 break;
             case EnemyType.RANDOM_ENEMY:
-                Enemy = new RandomEnemy(10f, _rb2D, sprite);
+                Enemy = new RandomEnemy(10f, o.GetComponent<Rigidbody2D>());
                 break;
         }
-        GetComponent<SpriteRenderer>().sprite = Enemy.GetSprite();
+
     }
 
 

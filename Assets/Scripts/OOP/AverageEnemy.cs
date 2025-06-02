@@ -6,10 +6,10 @@ public class AverageEnemy : Enemy
 {
     public Transform player;
     public GameObject target;
-    public AverageEnemy(float speed, Rigidbody2D rb2D, Sprite sprite) : base(speed, rb2D, sprite)
+    public AverageEnemy(float speed, Rigidbody2D rb2D) : base(speed, rb2D, Resources.Load<Sprite>("AverageEnemy"))
     {
         speed = 15f;
-        Rigidbody2D rigidbody2D = rb2D;
+
 
 
     }

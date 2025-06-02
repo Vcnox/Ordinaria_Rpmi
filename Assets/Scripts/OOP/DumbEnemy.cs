@@ -8,7 +8,7 @@ public class DumbEnemy : Enemy
     private Vector2 _Dir;
    
     
-    public DumbEnemy(float speed, Rigidbody2D rb2D, Sprite sprite) : base(speed, rb2D, sprite)
+    public DumbEnemy(float speed, Rigidbody2D rb2D) : base(speed, rb2D, Resources.Load<Sprite>("DumbEnemy"))
     {
         Rigidbody2D rigidbody2D = rb2D;
         speed = 30f;

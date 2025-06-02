@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     public EnemyType type;
-    private Enemy enemy;
+    public Enemy enemy;
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +17,11 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        enemy.Move();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
+        enemy.Hit();
     }
 }
